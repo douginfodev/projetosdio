@@ -1,6 +1,6 @@
-FROM php:7.4-fpm
+FROM php:8.1-fpm-alpine
 
-LABEL maintainer="Vitor Ruschoni <vitorruschoni@gmail.com>"
+LABEL maintainer="Douglas Ramos <dougarainfo@gmail.com>"
 
 RUN apt-get update \
     && docker-php-ext-install pdo_mysql
