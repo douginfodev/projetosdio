@@ -1,2 +1,1 @@
-#DESAFIO POKEDEX API
-
+# Trilha JS Developer - Pokedex
