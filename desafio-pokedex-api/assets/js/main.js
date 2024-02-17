@@ -1,13 +1,16 @@
 const pokemonList = document.getElementById('pokemonList')
 const loadMoreButton = document.getElementById('loadMoreButton')
+const pokemonDetails = document.getElementById('card')
 
 const maxRecords = 151
 const limit = 10
 let offset = 0;
+let start = true;
+let details; 
 
 function convertPokemonToLi(pokemon) {
     return `
-        <li class="pokemon ${pokemon.type}">
+        <li class="pokemon ${pokemon.type}" onclick="findPokemon(${pokemon.number})">
             <span class="number">#${pokemon.number}</span>
             <span class="name">${pokemon.name}</span>
 
@@ -20,17 +23,60 @@ function convertPokemonToLi(pokemon) {
                      alt="${pokemon.name}">
             </div>
         </li>
+       
     `
 }
 
-function loadPokemonItens(offset, limit) {
+function displayPokemonDetails(pokemon) {
+    return `
+    <div id="card">
+    <div id="pokemon-display" class="${pokemon.type}">
+      <div class="pokemon-title">
+      <h1>#${pokemon.number} - ${pokemon.name}</h1>
+      </div>
+
+       <div class="pokemon-types">
+         ${pokemon.types.map((type) => `<span>${type}</span>`)}
+       </div>
+
+      <div class="pokemon-image">
+      <img src="${pokemon.photo}"
+      alt="${pokemon.name}">
+      </div>
+    </div>   
+
+    <div class="pokemon-details">
+      DETAILS
+    </div> 
+    </div>
+    `
+}
+
+function findPokemon(id){
+    loadPokemonItens(offset, limit,id) 
+}
+
+function loadPokemonItens(offset, limit,indice) {
     pokeApi.getPokemons(offset, limit).then((pokemons = []) => {
-        const newHtml = pokemons.map(convertPokemonToLi).join('')
+        pokemonList.innerHTML = "";
+        let idpokemon = (indice - 1);
+        let newHtml = ''
+
+        if (indice < 0)
+          newHtml = pokemons.map(convertPokemonToLi).join('');
+        else
+          newHtml = displayPokemonDetails(pokemons[idpokemon])       
+       
         pokemonList.innerHTML += newHtml
     })
 }
 
-loadPokemonItens(offset, limit)
+window.onload = init();
+
+function init(){
+       loadPokemonItens(offset, limit,-1)
+}
+
 
 loadMoreButton.addEventListener('click', () => {
     offset += limit

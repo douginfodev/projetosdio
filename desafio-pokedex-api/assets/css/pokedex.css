@@ -84,6 +84,7 @@
     margin: .5rem;
     padding: 1rem;
     border-radius: 1rem;
+    cursor: pointer;
 }
 
 .pokemon .number {
@@ -127,6 +128,11 @@
     height: 70px;
 }
 
+.card .details img {
+    max-width: 50%;
+    height: auto;
+}
+
 .pagination {
     display: flex;
     flex-direction: row;
@@ -145,6 +151,74 @@
     border: none;
     border-radius: 1rem;
 }
+
+#card{
+  width: 320px;
+  height:500px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;  
+  color: #fff;
+  background-color: #efefef;
+  border: 1px solid white;
+  border-radius: 10px;
+}
+
+#card #pokemon-display{
+   width: 100%;
+   height:220px;
+   border-radius: 10px 10px 0 0;
+   padding:10px;
+}
+
+#card .pokemon-title{
+    width: 100%;
+    height:30px;
+    color: white;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    text-align: center;
+ }
+
+ #card .pokemon-types{
+    width: 100%;
+    height:30px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-around;
+    gap: 2px;
+    align-items: center;
+ }
+
+ #card .pokemon-image{
+    width: 100%;
+    height:110px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    margin-bottom: 2px;
+ }
+
+ #card .pokemon-image img{
+    width: 40%;
+    height:auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2px;
+ }
+
+ #card .pokemon-details{
+    width: 100%;
+    height:250px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 0 0 10px 10px;
+    padding: 10px;
+    margin-bottom: 2px;
+ }
 
 @media screen and (min-width: 380px) {
     .pokemons {
