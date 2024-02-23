@@ -19,6 +19,14 @@
   height: 300px;
 }
 
+.content__incorporate{
+  border:5px solid rgb(144, 144, 144);
+  border-radius: 5px;
+  width: 500px;
+  min-width: 500px;
+  height: 300px;
+}
+
 .content__description{
   margin-top: 15px;
 }
