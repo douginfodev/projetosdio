@@ -1,5 +1,13 @@
 .container__menu-title{
   color: white;
+  background-color: #87b3f1;
+  background-image: url('https://www.digitalrally.com.br/angular/topolinkedin.png');
+  background-repeat: no-repeat;
+  height: 280px;
+  width: 1080px;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .container__menu-title > h1{
@@ -9,9 +17,19 @@
   font-family: 'Open Sans', sans-serif;
   display: flex;
   justify-content: center;
+  display: none;
+}
+
+.container__menu-title h2{
+  display: flex;
+  justify-content: end;
+  padding-right: 10px;
+  align-items: center;
+  background-color: rgba(red, green, blue, 1);
+  border: none;
 }
 
 .container__menu-title > hr{
-  margin-top: 20px;
-  margin-bottom: 5px;
+  margin-top: 0;
+  margin-bottom: 0;
 }

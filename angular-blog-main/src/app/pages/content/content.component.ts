@@ -9,8 +9,10 @@ import {dataFake} from '../../data/dataFake'
 })
 export class ContentComponent implements OnInit {
   photoCover:string = ""
+  incorporate:string = ""
   contentTitle:string = ""
   contentDescription:string = ""
+  section:string = ""
   private id:string | null = "0"
 
   constructor(
@@ -31,6 +33,8 @@ export class ContentComponent implements OnInit {
     this.contentTitle = result.title
     this.contentDescription = result.description
     this.photoCover = result.photoCover
+    this.incorporate = result.incorporar
+    this.section = result.section
   }
 
 }
