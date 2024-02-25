@@ -1,0 +1,37 @@
+.footer{
+    display: flex;
+    width: 98%;
+    margin:10px;
+    padding: 10px;
+    height: 100px;
+    border-radius: 10px;
+    background-color: #2e1c3f;
+}
+
+.column{
+    width:33%;
+    height: auto;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: white;
+}
+
+.footer h3{
+  color: white;
+}
+b{
+    color: lime;
+}
+
+.container-socialmedia{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding:10px;
+}
+
+.socialmedia-logo img{
+    width: 70%;
+    height: auto;
+}
